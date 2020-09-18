@@ -34,16 +34,19 @@ public class Main {
     }
 
     public static void printData(ArrayList<Task> tasksData) {
-        for (Task t : tasksData) {
-            System.out.println(t);
-        }
+        tasksData.stream().forEach(System.out::println);
+    }
+
+
+    public static int countDeadlinesWithStreams(ArrayList<Task> taskData) {
+        taskData.stream()
+                .filter(n -> n instanceof Deadline)
+                .count();
     }
 
     public static void printDeadlines(ArrayList<Task> tasksData) {
-        for (Task t : tasksData) {
-            if (t instanceof Deadline) {
-                System.out.println(t);
-            }
-        }
+        tasksData.stream()
+                .filter((n) -> n instanceof Deadline)
+                .forEach(System.out::println);
     }
 }
