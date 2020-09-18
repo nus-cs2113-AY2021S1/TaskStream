@@ -17,10 +17,12 @@ public class Main {
         ArrayList<Task> tasksData = dm.loadData();
 
         System.out.println("Printing deadlines");
-        printDeadlines(tasksData);
-        printData(tasksData);
-        System.out.println("Total number of deadlines: " + countDeadlines(tasksData));
-
+//        printDeadlines(tasksData);
+//        printData(tasksData);
+//        System.out.println("Total number of deadlines: " + countDeadlines(tasksData));
+        printDataUsingStreams(tasksData);
+        printDeadlinesUsingStreams(tasksData);
+        System.out.printf("Count of deadlines: %d", countDeadlines(tasksData));
     }
 
     private static int countDeadlines(ArrayList<Task> tasksData) {
